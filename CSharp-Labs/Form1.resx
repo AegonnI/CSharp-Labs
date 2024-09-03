@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Дробная часть.
+Дана сигнатура метода: public double fraction (double x);
+Необходимо реализовать метод таким образом, чтобы он возвращал только
+дробную часть числа х. Подсказка: вещественное число может быть
+преобразовано к целому путем отбрасывания дробной части.
+Пример:
+x=5,25
+результат: 0,25
+</value>
+  </data>
 </root>
