@@ -79,7 +79,7 @@ namespace CSharp_Labs
 
         public static int max3(int x, int y, int z)
         {
-            return Math.Max(Math.Max(x, y), Math.Max(y, z));
+            return Math.Max(Math.Max(x, y), z);
         }
 
         // Lab1 Ex2-7
