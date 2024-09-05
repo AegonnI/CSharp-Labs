@@ -20,8 +20,8 @@ namespace CSharp_Labs
 
             textBox2 = new TextBox();
             textBox3 = new TextBox();
-            Init_textBox(textBox2, 663, 91);
-            Init_textBox(textBox3, 663, 121);
+            Init_textBox(textBox2, textBox1.Location.X, textBox1.Location.Y + 30);
+            Init_textBox(textBox3, textBox1.Location.X, textBox2.Location.Y + 30);
             textBox1.Visible = false;
             textBox2.Visible = false;
             textBox3.Visible = false;
@@ -29,9 +29,9 @@ namespace CSharp_Labs
             valueLabel1 = new Label();
             valueLabel2 = new Label();
             valueLabel3 = new Label();
-            Init_label(valueLabel1, 633, 61);
-            Init_label(valueLabel2, 633, 91);
-            Init_label(valueLabel3, 633, 121);
+            Init_label(valueLabel1, textBox1.Location.X - 30, textBox1.Location.Y);
+            Init_label(valueLabel2, textBox1.Location.X - 30, textBox2.Location.Y);
+            Init_label(valueLabel3, textBox1.Location.X - 30, textBox3.Location.Y);
 
             label4.Location = new(663, 151);
         }
@@ -170,6 +170,17 @@ namespace CSharp_Labs
                     }
                     break;
 
+                case "Lab 1: Задание 3. Циклы: 1":
+                    if (!LabMath.IsIntNumber(textBox1.Text) && (int.Parse(textBox1.Text) < 0))
+                    {
+                        label4.Text = errorMessage;
+                    }
+                    else
+                    {
+                        label4.Text = "результат: “" + LabMath.listNums(int.Parse(textBox1.Text)) + "“";
+                    }
+                    break;
+
                 default:
                     break;
             }
@@ -219,7 +230,7 @@ namespace CSharp_Labs
                     label3.Text = "Введите числа";
                     ChangeVisible(true, true, true);
                     ChangeValueText("a = ", "b = ", "num = ");
-                    valueLabel3.Location = new(613, 121);
+                    valueLabel3.Location = new(textBox1.Location.X - 50, textBox3.Location.Y);
                     break;
 
                 case "Lab 1: Задание 1. Методы: 9":
@@ -228,7 +239,7 @@ namespace CSharp_Labs
                     label3.Text = "Введите числа";
                     ChangeVisible(true, true, true);
                     ChangeValueText("a = ", "b = ", "c = ");
-                    valueLabel3.Location = new(633, 121);
+                    valueLabel3.Location = new(textBox1.Location.X - 30, textBox3.Location.Y);
                     break;
 
                 case "Lab 1: Задание 2. Условия: 1":
@@ -253,7 +264,7 @@ namespace CSharp_Labs
                     label3.Text = "Введите числа";
                     ChangeVisible(true, true, true);
                     ChangeValueText("x = ", "y = ", "z = ");
-                    valueLabel3.Location = new(633, 121);
+                    valueLabel3.Location = new(textBox1.Location.X - 30, textBox3.Location.Y);
                     break;
 
                 case "Lab 1: Задание 2. Условия: 7":
@@ -267,6 +278,14 @@ namespace CSharp_Labs
                 case "Lab 1: Задание 2. Условия: 9":
                     label2.Text = "Задание 2. Условия";
                     label1.Text = "День недели.\r\nДана сигнатура метода: public String day (int x);\r\nМетод принимает число x, обозначающее день недели. Необходимо реализовать\r\nметод таким образом, чтобы он возвращал строку, которая будет обозначать\r\nтекущий день недели, где 1- это понедельник, а 7 – воскресенье. Если число не\r\nот 1 до 7 то верните текст “это не день недели”. Вместо if в данной задаче\r\nиспользуйте switch.\r\nПример:\r\nx=5\r\nрезультат: “пятница”";
+                    label3.Text = "Введите число";
+                    ChangeVisible(true, false, false);
+                    ChangeValueText("x = ");
+                    break;
+
+                case "Lab 1: Задание 3. Циклы: 1":
+                    label2.Text = "Задание 3. Циклы";
+                    label1.Text = "Числа подряд.\r\nДана сигнатура метода: public String listNums (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал строку, в\r\nкоторой будут записаны все числа от 0 до x (включительно).\r\nПример:\r\nx=5\r\nрезультат: “0 1 2 3 4 5”";
                     label3.Text = "Введите число";
                     ChangeVisible(true, false, false);
                     ChangeValueText("x = ");

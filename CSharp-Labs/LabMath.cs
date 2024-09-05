@@ -117,5 +117,19 @@ namespace CSharp_Labs
                     return "это не день недели";
             }
         }
+
+        // Lab1 Ex3-1
+
+        public static String listNums(int x)
+        {
+            string result = String.Empty;
+
+            for (int i = 0; i <= x; i++)
+            {
+                result += i.ToString() + ' ';
+            }
+
+            return result.Substring(0, result.Length-1);
+        }
     }
 }
