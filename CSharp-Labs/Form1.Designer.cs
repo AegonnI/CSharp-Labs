@@ -60,7 +60,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(12, 243);
+            textBox1.Location = new Point(663, 61);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(125, 27);
             textBox1.TabIndex = 2;
@@ -68,7 +68,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 213);
+            label3.Location = new Point(663, 31);
             label3.Name = "label3";
             label3.Size = new Size(217, 20);
             label3.TabIndex = 3;
@@ -77,14 +77,14 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 287);
+            label4.Location = new Point(611, 110);
             label4.Name = "label4";
             label4.Size = new Size(0, 20);
             label4.TabIndex = 4;
             // 
             // button1
             // 
-            button1.Location = new Point(143, 241);
+            button1.Location = new Point(794, 59);
             button1.Name = "button1";
             button1.Size = new Size(147, 29);
             button1.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Lab 1: Задание 1. Методы: 1", "Lab 1: Задание 1. Методы: 3" });
+            comboBox1.Items.AddRange(new object[] { "Lab 1: Задание 1. Методы: 1", "Lab 1: Задание 1. Методы: 3", "Lab 1: Задание 1. Методы: 5", "Lab 1: Задание 1. Методы: 7", "Lab 1: Задание 1. Методы: 9", "Lab 1: Задание 2. Условия: 1", "Lab 1: Задание 2. Условия: 3", "Lab 1: Задание 2. Условия: 5", "Lab 1: Задание 2. Условия: 7", "Lab 1: Задание 2. Условия: 9" });
             comboBox1.Location = new Point(1024, 59);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(299, 28);
@@ -106,7 +106,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(1024, 26);
+            label5.Location = new Point(1024, 31);
             label5.Name = "label5";
             label5.Size = new Size(91, 20);
             label5.TabIndex = 7;
@@ -126,7 +126,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
-            Text = "Дробная часть.";
+            Text = "Labs";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -142,5 +142,13 @@
         private Button button1;
         private ComboBox comboBox1;
         private Label label5;
+
+        private Label valueLabel1;
+        private Label valueLabel2;
+        private Label valueLabel3;
+
+        private TextBox textBox2;
+        private TextBox textBox3;
+
     }
 }
