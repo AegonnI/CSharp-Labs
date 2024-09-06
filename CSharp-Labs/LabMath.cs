@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,22 +9,39 @@ namespace CSharp_Labs
 {
     public static class LabMath
     {
+        public static string ResultDraw(Func<bool> checkFunc, Func<string> resultFunc)
+        {
+            if (checkFunc())
+            {
+                return "Incorrect input, try again!";
+            }
+            else
+            {
+                return "Результат: " + resultFunc();
+            }
+        }
+
         // Lab1 Ex1-1
         public static bool IsDoubleNumber(string number)
         {
-            return double.TryParse(number, out var result);
+            return double.TryParse(number, out var result) && !(number[0] == '0' && number.Length != 1);
+        }
+
+        public static bool IsDecimalNumber(string number)
+        {
+            return decimal.TryParse(number, out var result) && !(number[0] == '0' && number.Length != 1);
         }
 
         public static double fraction(double x)
         {
-            return (double)((decimal)x - (decimal)Math.Floor(x));
+            return (double)((decimal)x - (decimal)(int)(x));
         }
 
         // Lab1 Ex1-3
 
-        public static bool IsChatADigit(string digit)
+        public static bool IsCharADigit(string digit)
         {
-            return char.TryParse(digit.ToString(), out var result);
+            return char.TryParse(digit.ToString(), out var result) && 48 <= char.Parse(digit) && char.Parse(digit) <= 57;
         }
 
         public static int charToNum(char x)
@@ -65,7 +83,7 @@ namespace CSharp_Labs
             {
                 return x;
             }
-            return -1 * x;
+            return -x;
         }
 
         // Lab1 Ex2-3
@@ -234,6 +252,97 @@ namespace CSharp_Labs
         public static int findFirst(int[] arr, int x)
         {
             return Array.IndexOf(arr, x);
+        }
+
+        // Lab1 Ex4-3
+
+        public static int maxAbs(int[] arr)
+        {
+            int max = arr[0];
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (Math.Abs(arr[i]) > Math.Abs(max))
+                {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+        // Lab1 Ex4-5
+
+        public static string IntArrToText(int[] arr)
+        {
+            string result = String.Empty;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                result += arr[i].ToString() + ' ';
+            }
+
+            return result.Substring(0, result.Length - 1);
+        }
+
+        public static bool IndexNotOutside(string[] arr, string pos)
+        {
+            if (!IsIntArray(arr) || !IsIntNumber(pos))
+            {
+                return false;
+            }
+            if (int.Parse(pos) > arr.Length)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static int[] add(int[] arr, int[] ins, int pos)
+        {
+            int[] result = new int[arr.Length + ins.Length];
+            int j = 0;
+            int k = 0;
+            for (int i = 0; i < arr.Length + ins.Length; i++)
+            {
+                if (pos <= i && i <= pos + ins.Length - 1)
+                {
+                    result[i] = ins[k];
+                    k++;
+                }
+                else
+                {
+                    result[i] = arr[j];
+                    j++;
+                }
+            }
+            return result;
+        }
+
+        // Lab1 Ex4-7
+
+        public static int[] reverseBack(int[] arr)
+        {
+            for (int i = 0; i < arr.Length / 2; i++)
+            {
+                int temp = arr[i];
+                arr[i] = arr[arr.Length - 1 - i];
+                arr[arr.Length - 1 - i] = temp;
+            }
+            return arr;
+        }
+
+        // Lab1 Ex4-9
+
+        public static int[] findAll(int[] arr, int x)
+        {
+            List<int> list = new List<int>();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == x)
+                {
+                    list.Add(i);
+                }
+            }
+            return list.ToArray();
         }
     }
 }
