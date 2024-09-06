@@ -236,6 +236,17 @@ namespace CSharp_Labs
                     }
                     break;
 
+                case "Lab 1: Задание 4. Массивы: 3":
+                    if (!LabMath.IsIntArray(textBox1.Text.Split(' ')))
+                    {
+                        label4.Text = errorMessage;
+                    }
+                    else
+                    {
+                        label4.Text = "результат: “" + LabMath.findFirst(LabMath.StringToIntArr(textBox1.Text.Split(' ')), int.Parse(textBox2.Text)).ToString() + "“";
+                    }
+                    break;
+
                 default:
                     break;
             }
@@ -374,11 +385,19 @@ namespace CSharp_Labs
                     break;
 
                 case "Lab 1: Задание 4. Массивы: 1":
-                    label2.Text = "Задание 3. Циклы";
-                    label1.Text = "Правый треугольник.\r\nДана сигнатура метода: public void rightTriangle (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он выводил на экран\r\nтреугольник из символов ‘*’ у которого х символов в высоту, а количество\r\nсимволов в ряду совпадает с номером строки, при этом треугольник выровнен\r\nпо правому краю. Подсказка: перед символами ‘*’ следует выводить\r\nнеобходимое количество пробелов.\r\nПример 1:\r\nx=3\r\nрезультат:\r\n *\r\n **\r\n***\r\nПример 2:\r\nx=4\r\nрезультат:\r\n *\r\n **\r\n ***\r\n****";
+                    label2.Text = "Задание 4. Массивы";
+                    label1.Text = "Поиск первого значения.\r\nДана сигнатура метода: public int findFirst (int[] arr, int x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал индекс\r\nпервого вхождения числа x в массив arr. Если число не входит в массив –\r\nвозвращается -1.\r\nПример:\r\narr=[1,2,3,4,2,2,5]\r\nx=2\r\nрезультат: 1";
                     label3.Text = "Введите числа массива(через пробел) и число";
                     ChangeVisible(true, true, false);
                     ChangeValueText("arr = ","x = ");
+                    break;
+
+                case "Lab 1: Задание 4. Массивы: 3":
+                    label2.Text = "Задание 4. Массивы";
+                    label1.Text = "Поиск максимального.\r\nДана сигнатура метода: public int maxAbs (int[] arr);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал\r\nнаибольшее по модулю (то есть без учета знака) значение массива arr.\r\nПример:\r\narr=[1,-2,-7,4,2,2,5]\r\nрезультат: -7";
+                    label3.Text = "Введите числа массива(через пробел)";
+                    ChangeVisible(true, false, false);
+                    ChangeValueText("arr = ");
                     break;
 
                 default:
