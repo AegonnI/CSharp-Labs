@@ -171,7 +171,7 @@ namespace CSharp_Labs
                     break;
 
                 case "Lab 1: Задание 3. Циклы: 1":
-                    if (!LabMath.IsIntNumber(textBox1.Text) && (int.Parse(textBox1.Text) < 0))
+                    if (!LabMath.IsPosetiveOfZeroInt(textBox1.Text))
                     {
                         label4.Text = errorMessage;
                     }
@@ -181,14 +181,64 @@ namespace CSharp_Labs
                     }
                     break;
 
+                case "Lab 1: Задание 3. Циклы: 3":
+                    if (!LabMath.IsPosetiveOfZeroInt(textBox1.Text))
+                    {
+                        label4.Text = errorMessage;
+                    }
+                    else
+                    {
+                        label4.Text = "результат: “" + LabMath.chet(int.Parse(textBox1.Text)) + "“";
+                    }
+                    break;
+
+                case "Lab 1: Задание 3. Циклы: 5":
+                    if (!LabMath.IsLongNumber(textBox1.Text))
+                    {
+                        label4.Text = errorMessage;
+                    }
+                    else
+                    {
+                        label4.Text = "результат: “" + LabMath.numLen(long.Parse(textBox1.Text)) + "“";
+                    }
+                    break;
+
+                case "Lab 1: Задание 3. Циклы: 7":
+                    if (!LabMath.IsPosetiveOfZeroInt(textBox1.Text))
+                    {
+                        label4.Text = errorMessage;
+                    }
+                    else
+                    {
+                        label4.Text = LabMath.square(int.Parse(textBox1.Text));
+                    }
+                    break;
+
+                case "Lab 1: Задание 3. Циклы: 9":
+                    if (!LabMath.IsPosetiveOfZeroInt(textBox1.Text))
+                    {
+                        label4.Text = errorMessage;
+                    }
+                    else
+                    {
+                        label4.Text = LabMath.rightTriangle(int.Parse(textBox1.Text));
+                    }
+                    break;
+
+                case "Lab 1: Задание 4. Массивы: 1":
+                    if (!LabMath.IsIntArray(textBox1.Text.Split(' ')) || !LabMath.IsIntNumber(textBox2.Text))
+                    {
+                        label4.Text = errorMessage;
+                    }
+                    else
+                    {
+                        label4.Text = "результат: “" + LabMath.findFirst(LabMath.StringToIntArr(textBox1.Text.Split(' ')), int.Parse(textBox2.Text)).ToString() + "“";
+                    }
+                    break;
+
                 default:
                     break;
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -289,6 +339,46 @@ namespace CSharp_Labs
                     label3.Text = "Введите число";
                     ChangeVisible(true, false, false);
                     ChangeValueText("x = ");
+                    break;
+
+                case "Lab 1: Задание 3. Циклы: 3":
+                    label2.Text = "Задание 3. Циклы";
+                    label1.Text = "Четные числа.\r\nДана сигнатура метода: public String chet (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал строку, в\r\nкоторой будут записаны все четные числа от 0 до x (включительно). Подсказа\r\nдля обеспечения качества кода: инструкцию if использовать не следует.\r\nПример:\r\nx=9\r\nрезультат: “0 2 4 6 8”";
+                    label3.Text = "Введите число";
+                    ChangeVisible(true, false, false);
+                    ChangeValueText("x = ");
+                    break;
+
+                case "Lab 1: Задание 3. Циклы: 5":
+                    label2.Text = "Задание 3. Циклы";
+                    label1.Text = "Длина числа.\r\nДана сигнатура метода: public int numLen (long x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал количество\r\nзнаков в числе x.\r\nПодсказка:\r\nInt у=123/10; // у будет иметь значение 12\r\nПример:\r\nx=12567\r\nрезультат: 5";
+                    label3.Text = "Введите число";
+                    ChangeVisible(true, false, false);
+                    ChangeValueText("x = ");
+                    break;
+
+                case "Lab 1: Задание 3. Циклы: 7":
+                    label2.Text = "Задание 3. Циклы";
+                    label1.Text = "Квадрат.\r\nДана сигнатура метода: public void square (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он выводил на экран\r\nквадрат из символов ‘*’ размером х, у которого х символов в ряд и х символов в\r\nвысоту.\r\nПример 1:\r\nx=2\r\nрезультат:\r\n**\r\n**\r\nПример 2:\r\nx=4\r\nрезультат:\r\n****\r\n****\r\n****\r\n****";
+                    label3.Text = "Введите число";
+                    ChangeVisible(true, false, false);
+                    ChangeValueText("x = ");
+                    break;
+
+                case "Lab 1: Задание 3. Циклы: 9":
+                    label2.Text = "Задание 3. Циклы";
+                    label1.Text = "Правый треугольник.\r\nДана сигнатура метода: public void rightTriangle (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он выводил на экран\r\nтреугольник из символов ‘*’ у которого х символов в высоту, а количество\r\nсимволов в ряду совпадает с номером строки, при этом треугольник выровнен\r\nпо правому краю. Подсказка: перед символами ‘*’ следует выводить\r\nнеобходимое количество пробелов.\r\nПример 1:\r\nx=3\r\nрезультат:\r\n *\r\n **\r\n***\r\nПример 2:\r\nx=4\r\nрезультат:\r\n *\r\n **\r\n ***\r\n****";
+                    label3.Text = "Введите число";
+                    ChangeVisible(true, false, false);
+                    ChangeValueText("x = ");
+                    break;
+
+                case "Lab 1: Задание 4. Массивы: 1":
+                    label2.Text = "Задание 3. Циклы";
+                    label1.Text = "Правый треугольник.\r\nДана сигнатура метода: public void rightTriangle (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он выводил на экран\r\nтреугольник из символов ‘*’ у которого х символов в высоту, а количество\r\nсимволов в ряду совпадает с номером строки, при этом треугольник выровнен\r\nпо правому краю. Подсказка: перед символами ‘*’ следует выводить\r\nнеобходимое количество пробелов.\r\nПример 1:\r\nx=3\r\nрезультат:\r\n *\r\n **\r\n***\r\nПример 2:\r\nx=4\r\nрезультат:\r\n *\r\n **\r\n ***\r\n****";
+                    label3.Text = "Введите числа массива(через пробел) и число";
+                    ChangeVisible(true, true, false);
+                    ChangeValueText("arr = ","x = ");
                     break;
 
                 default:

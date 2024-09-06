@@ -131,5 +131,109 @@ namespace CSharp_Labs
 
             return result.Substring(0, result.Length-1);
         }
+
+        // Lab1 Ex3-3
+
+        public static bool IsPosetiveOfZeroInt(string number)
+        {
+            if (IsIntNumber(number))
+            {
+                return int.Parse(number) >= 0;
+            }
+            return false;
+        }
+
+        public static String chet(int x)
+        {
+            string result = String.Empty;
+
+            for (int i = 0; i <= x; i+=2)
+            {
+                result += i.ToString() + ' ';
+            }
+
+            return result.Substring(0, result.Length - 1);
+        }
+
+        // Lab1 Ex3-5
+
+        public static bool IsLongNumber(string number)
+        {
+            return long.TryParse(number, out var result) && !(number[0] == '0' && number.Length != 1);
+        }
+
+        public static int numLen(long x)
+        {
+            return Math.Abs(x).ToString().Length;
+        }
+
+        // Lab1 Ex3-7
+
+        public static string square(int x)
+        {
+            string square = String.Empty;
+            for (int i = 0; i < x; i++) 
+            { 
+                square += "*";
+            }
+            for (int i = 0; i < x-1; i++)
+            {
+                square += "\n" + square.Substring(0, x);
+            }
+            return square;
+        }
+
+        // Lab1 Ex3-9
+
+        public static string rightTriangle(int x)
+        {
+            string square = String.Empty;
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < x; j++)
+                {
+                    if (i + j >= x-1)
+                    {
+                        square += "*";
+                    }
+                    else
+                    {
+                        square += " ";
+                    }
+                    
+                }
+                square += "\n";
+            }
+            return square;
+        }
+
+        // Lab1 Ex4-1
+
+        public static bool IsIntArray(string[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (!IsIntNumber(arr[i]))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static int[] StringToIntArr(string[] stringArr)
+        {
+            int[] intArr = new int[stringArr.Length];
+            for(int i = 0;i < stringArr.Length; i++)
+            {
+                intArr[i] = int.Parse(stringArr[i]);
+            }
+            return intArr;
+        }
+
+        public static int findFirst(int[] arr, int x)
+        {
+            return Array.IndexOf(arr, x);
+        }
     }
 }

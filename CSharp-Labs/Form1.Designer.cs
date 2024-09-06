@@ -47,7 +47,6 @@
             label1.Size = new Size(435, 120);
             label1.TabIndex = 0;
             label1.Text = resources.GetString("label1.Text");
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -98,7 +97,7 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Lab 1: Задание 1. Методы: 1", "Lab 1: Задание 1. Методы: 3", "Lab 1: Задание 1. Методы: 5", "Lab 1: Задание 1. Методы: 7", "Lab 1: Задание 1. Методы: 9", "Lab 1: Задание 2. Условия: 1", "Lab 1: Задание 2. Условия: 3", "Lab 1: Задание 2. Условия: 5", "Lab 1: Задание 2. Условия: 7", "Lab 1: Задание 2. Условия: 9", "Lab 1: Задание 3. Циклы: 1", "Lab 1: Задание 3. Циклы: 3", "Lab 1: Задание 3. Циклы: 5", "Lab 1: Задание 3. Циклы: 7", "Lab 1: Задание 3. Циклы: 9" });
+            comboBox1.Items.AddRange(new object[] { "Lab 1: Задание 1. Методы: 1", "Lab 1: Задание 1. Методы: 3", "Lab 1: Задание 1. Методы: 5", "Lab 1: Задание 1. Методы: 7", "Lab 1: Задание 1. Методы: 9", "Lab 1: Задание 2. Условия: 1", "Lab 1: Задание 2. Условия: 3", "Lab 1: Задание 2. Условия: 5", "Lab 1: Задание 2. Условия: 7", "Lab 1: Задание 2. Условия: 9", "Lab 1: Задание 3. Циклы: 1", "Lab 1: Задание 3. Циклы: 3", "Lab 1: Задание 3. Циклы: 5", "Lab 1: Задание 3. Циклы: 7", "Lab 1: Задание 3. Циклы: 9", "Lab 1: Задание 4. Массивы: 1", "Lab 1: Задание 4. Массивы: 3", "Lab 1: Задание 4. Массивы: 5", "Lab 1: Задание 4. Массивы: 7", "Lab 1: Задание 4. Массивы: 9" });
             comboBox1.Location = new Point(896, 44);
             comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
