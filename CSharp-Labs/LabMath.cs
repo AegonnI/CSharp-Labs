@@ -21,7 +21,8 @@ namespace CSharp_Labs
             }
         }
 
-        // Lab1 Ex1-1
+        // Checkers
+
         public static bool IsDoubleNumber(string number)
         {
             return double.TryParse(number, out var result) && !(number[0] == '0' && number.Length != 1);
@@ -32,6 +33,81 @@ namespace CSharp_Labs
             return decimal.TryParse(number, out var result) && !(number[0] == '0' && number.Length != 1);
         }
 
+        public static bool IsCharADigit(string digit)
+        {
+            return char.TryParse(digit.ToString(), out var result) && 48 <= char.Parse(digit) && char.Parse(digit) <= 57;
+        }
+
+        public static bool IsIntNumber(string number)
+        {
+            return int.TryParse(number, out var result) && !(number[0] == '0' && number.Length != 1);
+        }
+
+        public static bool IsPosetiveOfZeroInt(string number)
+        {
+            if (IsIntNumber(number))
+            {
+                return int.Parse(number) >= 0;
+            }
+            return false;
+        }
+
+        public static bool IsLongNumber(string number)
+        {
+            return long.TryParse(number, out var result) && !(number[0] == '0' && number.Length != 1);
+        }
+
+        public static bool IsIntArray(string[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (!IsIntNumber(arr[i]))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static bool IndexNotOutside(string[] arr, string pos)
+        {
+            if (!IsIntArray(arr) || !IsIntNumber(pos))
+            {
+                return false;
+            }
+            if (int.Parse(pos) > arr.Length)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        // Converters
+
+        public static int[] StringToIntArr(string[] stringArr)
+        {
+            int[] intArr = new int[stringArr.Length];
+            for (int i = 0; i < stringArr.Length; i++)
+            {
+                intArr[i] = int.Parse(stringArr[i]);
+            }
+            return intArr;
+        }
+
+        public static string IntArrToText(int[] arr)
+        {
+            string result = String.Empty;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                result += arr[i].ToString() + ' ';
+            }
+
+            return result.Substring(0, result.Length - 1);
+        }
+
+        // Lab1 Ex1-1
+
         public static double fraction(double x)
         {
             return (double)((decimal)x - (decimal)(int)(x));
@@ -39,22 +115,12 @@ namespace CSharp_Labs
 
         // Lab1 Ex1-3
 
-        public static bool IsCharADigit(string digit)
-        {
-            return char.TryParse(digit.ToString(), out var result) && 48 <= char.Parse(digit) && char.Parse(digit) <= 57;
-        }
-
         public static int charToNum(char x)
         {
-            return (int)x - 48;
+            return x - 48;
         }
 
         // Lab1 Ex1-5
-
-        public static bool IsIntNumber(string number)
-        {
-            return int.TryParse(number, out var result) && !(number[0] == '0' && number.Length != 1);
-        }
 
         public static bool is2Digits(int x)
         {
@@ -152,15 +218,6 @@ namespace CSharp_Labs
 
         // Lab1 Ex3-3
 
-        public static bool IsPosetiveOfZeroInt(string number)
-        {
-            if (IsIntNumber(number))
-            {
-                return int.Parse(number) >= 0;
-            }
-            return false;
-        }
-
         public static String chet(int x)
         {
             string result = String.Empty;
@@ -175,14 +232,9 @@ namespace CSharp_Labs
 
         // Lab1 Ex3-5
 
-        public static bool IsLongNumber(string number)
-        {
-            return long.TryParse(number, out var result) && !(number[0] == '0' && number.Length != 1);
-        }
-
         public static int numLen(long x)
         {
-            return Math.Abs(x).ToString().Length;
+            return x.ToString().Length;
         }
 
         // Lab1 Ex3-7
@@ -198,7 +250,7 @@ namespace CSharp_Labs
             {
                 square += "\n" + square.Substring(0, x);
             }
-            return square;
+            return "\n" + square;
         }
 
         // Lab1 Ex3-9
@@ -206,48 +258,22 @@ namespace CSharp_Labs
         public static string rightTriangle(int x)
         {
             string square = String.Empty;
-            for (int i = 0; i < x; i++)
+            if (x != 0)
             {
-                for (int j = 0; j < x; j++)
+                for (int i = 0; i < x - 1; i++)
                 {
-                    if (i + j >= x-1)
-                    {
-                        square += "*";
-                    }
-                    else
-                    {
-                        square += " ";
-                    }
-                    
+                    square += " ";
                 }
-                square += "\n";
+                square += "*";
+                for (int i = 1; i < x; i++)
+                {
+                    square += "\n" + square.Substring(0, x - i - 1) + "*" + square.Substring(square.Length - i, i);
+                }
             }
-            return square;
+            return "\n" + square;
         }
 
         // Lab1 Ex4-1
-
-        public static bool IsIntArray(string[] arr)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (!IsIntNumber(arr[i]))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        public static int[] StringToIntArr(string[] stringArr)
-        {
-            int[] intArr = new int[stringArr.Length];
-            for(int i = 0;i < stringArr.Length; i++)
-            {
-                intArr[i] = int.Parse(stringArr[i]);
-            }
-            return intArr;
-        }
 
         public static int findFirst(int[] arr, int x)
         {
@@ -270,31 +296,6 @@ namespace CSharp_Labs
         }
 
         // Lab1 Ex4-5
-
-        public static string IntArrToText(int[] arr)
-        {
-            string result = String.Empty;
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                result += arr[i].ToString() + ' ';
-            }
-
-            return result.Substring(0, result.Length - 1);
-        }
-
-        public static bool IndexNotOutside(string[] arr, string pos)
-        {
-            if (!IsIntArray(arr) || !IsIntNumber(pos))
-            {
-                return false;
-            }
-            if (int.Parse(pos) > arr.Length)
-            {
-                return false;
-            }
-            return true;
-        }
 
         public static int[] add(int[] arr, int[] ins, int pos)
         {
@@ -334,15 +335,15 @@ namespace CSharp_Labs
 
         public static int[] findAll(int[] arr, int x)
         {
-            List<int> list = new List<int>();
+            List<int> indexes = new List<int>();
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] == x)
                 {
-                    list.Add(i);
+                    indexes.Add(i);
                 }
             }
-            return list.ToArray();
+            return indexes.ToArray();
         }
     }
 }
