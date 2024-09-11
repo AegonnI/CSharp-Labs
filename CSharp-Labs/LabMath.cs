@@ -71,15 +71,8 @@ namespace CSharp_Labs
 
         public static bool IndexNotOutside(string[] arr, string pos)
         {
-            if (!IsIntArray(arr) || !IsIntNumber(pos))
-            {
-                return false;
-            }
-            if (int.Parse(pos) > arr.Length)
-            {
-                return false;
-            }
-            return true;
+            return IsIntArray(arr) && IsIntNumber(pos)
+                && int.Parse(pos) <= arr.Length && int.Parse(pos) >= 0;
         }
 
         // Converters
@@ -110,7 +103,7 @@ namespace CSharp_Labs
 
         public static double fraction(double x)
         {
-            return (double)((decimal)x - (decimal)(int)(x));           
+            return (double)((decimal)(x) - Math.Truncate((decimal)(x)));
         }
 
         // Lab1 Ex1-3
@@ -322,12 +315,7 @@ namespace CSharp_Labs
 
         public static int[] reverseBack(int[] arr)
         {
-            for (int i = 0; i < arr.Length / 2; i++)
-            {
-                int temp = arr[i];
-                arr[i] = arr[arr.Length - 1 - i];
-                arr[arr.Length - 1 - i] = temp;
-            }
+            Array.Reverse(arr);
             return arr;
         }
 
