@@ -110,7 +110,7 @@ namespace CSharp_Labs
 
         public static double fraction(double x)
         {
-            return (double)((decimal)x - (decimal)(int)(x));
+            return (double)((decimal)x - (decimal)(int)(x));           
         }
 
         // Lab1 Ex1-3
