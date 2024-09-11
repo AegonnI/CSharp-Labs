@@ -331,6 +331,11 @@ namespace CSharp_Labs
                     indexes.Add(i);
                 }
             }
+            if (indexes.Count != 0)
+            {
+                return indexes.ToArray();
+            }
+            indexes.Add(-1);
             return indexes.ToArray();
         }
     }
