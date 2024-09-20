@@ -1,3 +1,5 @@
+using System.Drawing;
+
 namespace CSharp_Labs
 {
     public partial class Form1 : Form
@@ -199,6 +201,7 @@ namespace CSharp_Labs
                     label1.Text = "Дробная часть.\r\nДана сигнатура метода: public double fraction (double x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал только\r\nдробную часть числа х. Подсказка: вещественное число может быть\r\nпреобразовано к целому путем отбрасывания дробной части.\r\nПример:\r\nx=5,25\r\nрезультат: 0,25\r\n";
                     label3.Text = "Введите вещественное число:";
                     ChangeInputField("x = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 1. Методы: 3":
@@ -206,6 +209,7 @@ namespace CSharp_Labs
                     label1.Text = "Букву в число.\r\nДана сигнатура метода: public int charToNum (char x);\r\nМетод принимает символ х, который представляет собой один из “0 1 2 3 4 5 6 7\r\n8 9”. Необходимо реализовать метод таким образом, чтобы он преобразовывал\r\nсимвол в соответствующее число. Подсказка: код символа ‘0’ — это число 48.\r\nПример:\r\nx=’3’\r\nрезультат: 3\r\n";
                     label3.Text = "Введите одно число из \"0 1 2 3 4 5 6 7 8 9\":";
                     ChangeInputField("x = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 1. Методы: 5":
@@ -213,6 +217,7 @@ namespace CSharp_Labs
                     label1.Text = "Двузначное.\r\nДана сигнатура метода: public bool is2Digits (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он принимал число x и\r\nвозвращал true, если оно двузначное.\r\nПример 1:\r\nx=32\r\nрезультат: true\r\nПример 2:\r\nx=516\r\nрезультат: false\r\n";
                     label3.Text = "Введите число";
                     ChangeInputField("x = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 1. Методы: 7":
@@ -221,6 +226,7 @@ namespace CSharp_Labs
                     label3.Text = "Введите числа";
                     ChangeInputField("a = ", "b = ", "num = ");
                     valueLabel3.Location = new(textBox1.Location.X - 50, textBox3.Location.Y);
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 1. Методы: 9":
@@ -229,6 +235,7 @@ namespace CSharp_Labs
                     label3.Text = "Введите числа";
                     ChangeInputField("a = ", "b = ", "c = ");
                     valueLabel3.Location = new(textBox1.Location.X - 30, textBox3.Location.Y);
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 2. Условия: 1":
@@ -236,6 +243,7 @@ namespace CSharp_Labs
                     label1.Text = "Модуль числа.\r\nДана сигнатура метода: public int abs (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал модуль\r\nчисла х (если оно было положительным, то таким и остается, если он было\r\nотрицательным – то необходимо вернуть его без знака минус).\r\nПример 1:\r\nx=5\r\nрезультат: 5\r\nПример 2:\r\nx=-3\r\nрезультат: 3";
                     label3.Text = "Введите число";
                     ChangeInputField("x = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 2. Условия: 3":
@@ -243,6 +251,7 @@ namespace CSharp_Labs
                     label1.Text = "Тридцать пять.\r\nДана сигнатура метода: public bool is35 (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал true, если\r\nчисло x делится нацело на 3 или 5. При этом, если оно делится и на 3, и на 5, то\r\nвернуть надо false. Подсказка: оператор % позволяет получить остаток от\r\nделения.\r\nПример 1:\r\nx=5\r\nрезультат: true\r\nПример 2:\r\nx=8\r\nрезультат: false\r\nПример 3:\r\nx=15\r\nрезультат: false";
                     label3.Text = "Введите число";
                     ChangeInputField("x = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 2. Условия: 5":
@@ -251,6 +260,7 @@ namespace CSharp_Labs
                     label3.Text = "Введите числа";
                     ChangeInputField("x = ", "y = ", "z = ");
                     valueLabel3.Location = new(textBox1.Location.X - 30, textBox3.Location.Y);
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 2. Условия: 7":
@@ -258,6 +268,7 @@ namespace CSharp_Labs
                     label1.Text = "Двойная сумма.\r\nДана сигнатура метода: public int sum2 (int x, int y);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал сумму\r\nчисел x и y. Однако, если сумма попадает в диапазон от 10 до 19, то надо вернуть\r\nчисло 20.\r\nПример 1:\r\nx=5 y=7\r\nрезультат: 20\r\nПример 2:\r\nx=8 y=-1\r\nрезультат: 7";
                     label3.Text = "Введите числа";
                     ChangeInputField("x = ", "y = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 2. Условия: 9":
@@ -265,6 +276,7 @@ namespace CSharp_Labs
                     label1.Text = "День недели.\r\nДана сигнатура метода: public String day (int x);\r\nМетод принимает число x, обозначающее день недели. Необходимо реализовать\r\nметод таким образом, чтобы он возвращал строку, которая будет обозначать\r\nтекущий день недели, где 1- это понедельник, а 7 – воскресенье. Если число не\r\nот 1 до 7 то верните текст “это не день недели”. Вместо if в данной задаче\r\nиспользуйте switch.\r\nПример:\r\nx=5\r\nрезультат: “пятница”";
                     label3.Text = "Введите число";
                     ChangeInputField("x = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 3. Циклы: 1":
@@ -272,6 +284,7 @@ namespace CSharp_Labs
                     label1.Text = "Числа подряд.\r\nДана сигнатура метода: public String listNums (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал строку, в\r\nкоторой будут записаны все числа от 0 до x (включительно).\r\nПример:\r\nx=5\r\nрезультат: “0 1 2 3 4 5”";
                     label3.Text = "Введите число";
                     ChangeInputField("x = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 3. Циклы: 3":
@@ -279,6 +292,7 @@ namespace CSharp_Labs
                     label1.Text = "Четные числа.\r\nДана сигнатура метода: public String chet (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал строку, в\r\nкоторой будут записаны все четные числа от 0 до x (включительно). Подсказа\r\nдля обеспечения качества кода: инструкцию if использовать не следует.\r\nПример:\r\nx=9\r\nрезультат: “0 2 4 6 8”";
                     label3.Text = "Введите число";
                     ChangeInputField("x = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 3. Циклы: 5":
@@ -286,6 +300,7 @@ namespace CSharp_Labs
                     label1.Text = "Длина числа.\r\nДана сигнатура метода: public int numLen (long x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал количество\r\nзнаков в числе x.\r\nПодсказка:\r\nInt у=123/10; // у будет иметь значение 12\r\nПример:\r\nx=12567\r\nрезультат: 5";
                     label3.Text = "Введите число";
                     ChangeInputField("x = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 3. Циклы: 7":
@@ -293,6 +308,7 @@ namespace CSharp_Labs
                     label1.Text = "Квадрат.\r\nДана сигнатура метода: public void square (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он выводил на экран\r\nквадрат из символов ‘*’ размером х, у которого х символов в ряд и х символов в\r\nвысоту.\r\nПример 1:\r\nx=2\r\nрезультат:\r\n**\r\n**\r\nПример 2:\r\nx=4\r\nрезультат:\r\n****\r\n****\r\n****\r\n****";
                     label3.Text = "Введите число";
                     ChangeInputField("x = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 3. Циклы: 9":
@@ -300,6 +316,7 @@ namespace CSharp_Labs
                     label1.Text = "Правый треугольник.\r\nДана сигнатура метода: public void rightTriangle (int x);\r\nНеобходимо реализовать метод таким образом, чтобы он выводил на экран\r\nтреугольник из символов ‘*’ у которого х символов в высоту, а количество\r\nсимволов в ряду совпадает с номером строки, при этом треугольник выровнен\r\nпо правому краю. Подсказка: перед символами ‘*’ следует выводить\r\nнеобходимое количество пробелов.\r\nПример 1:\r\nx=3\r\nрезультат:\r\n *\r\n **\r\n***\r\nПример 2:\r\nx=4\r\nрезультат:\r\n *\r\n **\r\n ***\r\n****";
                     label3.Text = "Введите число";
                     ChangeInputField("x = ");
+                    ChangeLabel(label4, "Lucida Concole", 8F);
                     break;
 
                 case "Lab 1: Задание 4. Массивы: 1":
@@ -307,6 +324,7 @@ namespace CSharp_Labs
                     label1.Text = "Поиск первого значения.\r\nДана сигнатура метода: public int findFirst (int[] arr, int x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал индекс\r\nпервого вхождения числа x в массив arr. Если число не входит в массив –\r\nвозвращается -1.\r\nПример:\r\narr=[1,2,3,4,2,2,5]\r\nx=2\r\nрезультат: 1";
                     label3.Text = "Введите числа массива(через пробел) и число";
                     ChangeInputField("arr = ","x = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 4. Массивы: 3":
@@ -314,6 +332,7 @@ namespace CSharp_Labs
                     label1.Text = "Поиск максимального.\r\nДана сигнатура метода: public int maxAbs (int[] arr);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал\r\nнаибольшее по модулю (то есть без учета знака) значение массива arr.\r\nПример:\r\narr=[1,-2,-7,4,2,2,5]\r\nрезультат: -7";
                     label3.Text = "Введите числа массива(через пробел)";
                     ChangeInputField("arr = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 4. Массивы: 5":
@@ -321,6 +340,7 @@ namespace CSharp_Labs
                     label1.Text = "Добавление массива в массив.\r\nДана сигнатура метода: public int[] add (int[] arr, int[] ins, int pos);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал новый\r\nмассив, который будет содержать все элементы массива arr, однако в позицию\r\npos будут вставлены значения массива ins.\r\nПример:\r\narr=[1,2,3,4,5]\r\nins=[7,8,9]\r\npos=3\r\nрезультат: [1,2,3,7,8,9,4,5]";
                     label3.Text = "Введите числа массивов(через пробел) и число";
                     ChangeInputField("arr = ", "ins = ", "pos = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 4. Массивы: 7":
@@ -328,6 +348,7 @@ namespace CSharp_Labs
                     label1.Text = "Возвратный реверс.\r\nДана сигнатура метода: public int[] reverseBack (int[] arr);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал новый\r\nмассив, в котором значения массива arr записаны задом наперед.\r\nПример:\r\narr=[1,2,3,4,5]\r\nрезультат: [5,4,3,2,1]\r\n";
                     label3.Text = "Введите числа массив(через пробел)";
                     ChangeInputField("arr = ");
+                    ChangeLabel(label4);
                     break;
 
                 case "Lab 1: Задание 4. Массивы: 9":
@@ -335,6 +356,7 @@ namespace CSharp_Labs
                     label1.Text = "Все вхождения.\r\nДана сигнатура метода: public int[] findAll (int[] arr, int x);\r\nНеобходимо реализовать метод таким образом, чтобы он возвращал новый\r\nмассив, в котором записаны индексы всех вхождений числа x в массив arr.\r\nПример:\r\narr=[1,2,3,8,2,2,9]\r\nx=2\r\nрезультат: [1,4,5]";
                     label3.Text = "Введите числа массив(через пробел)";
                     ChangeInputField("arr = ", "x = ");
+                    ChangeLabel(label4);
                     break;
 
                 default:
@@ -363,6 +385,11 @@ namespace CSharp_Labs
                 {
                     label4.Location = new Point(textBox1.Location.X, textBox1.Location.Y + 30);
                 }
+            }
+
+            void ChangeLabel(Label label, string font = "Segoe UI", float emSize = 9F)
+            {
+                label.Font = new Font(font, emSize, FontStyle.Regular, GraphicsUnit.Point, 204);
             }
         }
     }

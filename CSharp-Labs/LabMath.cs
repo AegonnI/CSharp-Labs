@@ -35,7 +35,8 @@ namespace CSharp_Labs
 
         public static bool IsCharADigit(string digit)
         {
-            return char.TryParse(digit.ToString(), out var result) && 48 <= char.Parse(digit) && char.Parse(digit) <= 57;
+            return char.TryParse(digit.ToString(), out var result) 
+                && 48 <= char.Parse(digit) && char.Parse(digit) <= 57;
         }
 
         public static bool IsIntNumber(string number)
